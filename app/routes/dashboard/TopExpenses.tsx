@@ -1,11 +1,15 @@
 import { computable } from 'cx/ui';
 import { Grid } from 'cx/widgets';
+import m, { TopExpenseModel } from './model';
 
 export const TopExpenses = () => (
    <cx>
-      <Grid
-         records-bind="$page.topExpenses"
+      <Grid<TopExpenseModel>
+         records={m.$page.topExpenses}
          headerMode="plain"
+         onCreateFilter={() => {
+            return (record) => record.percent > 0.01;
+         }}
          columns={[
             {
                field: 'name',
@@ -34,7 +38,7 @@ export const TopExpenses = () => (
                   <cx>
                      <div
                         class="bg-orange-400 h-2"
-                        style={{
+                        styles={{
                            width: computable('$record.percent', (percent) => percent * 100),
                         }}
                      />

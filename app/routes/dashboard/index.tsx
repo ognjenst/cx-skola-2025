@@ -1,14 +1,15 @@
-import Controller from './Controller';
-import { KPI } from './KPI';
+import { expr } from 'cx/ui';
 import { Charts } from './Charts';
-import { TopProducts } from './TopProducts';
+import PageController from './Controller';
 import { TopExpenses } from './TopExpenses';
-import { bind, expr } from 'cx/ui';
+import { TopProducts } from './TopProducts';
+import { KPI } from './KPI';
+import m from './model';
 
 export default () => (
    <cx>
-      <div class="bg-gray-50 overflow-auto" controller={Controller}>
-         <div class="grid grid-cols-4 p-8 gap-8" style="grid-template-rows: auto; width: 1150px">
+      <div class="bg-gray-50 overflow-auto" controller={PageController}>
+         <div class="grid grid-cols-4 p-8 gap-8" styles="grid-template-rows: auto; width: 1150px">
             <KPI
                title="Sales"
                value="65,235"
@@ -17,7 +18,7 @@ export default () => (
                iconClass="bg-green-100 text-green-600"
                change={0.102}
                className={{
-                  'opacity-10': expr('!{$page.charts.sales}'),
+                  'opacity-10': expr(m.$page.charts.sales, (c) => !c),
                }}
             />
             <KPI
@@ -28,7 +29,7 @@ export default () => (
                iconClass="bg-orange-100 text-orange-500"
                change={-0.15}
                className={{
-                  'opacity-10': expr('!{$page.charts.expenses}'),
+                  'opacity-10': expr(m.$page.charts.expenses, (c) => !c),
                }}
             />
             <KPI
@@ -38,9 +39,6 @@ export default () => (
                icon="credit-card"
                iconClass="bg-blue-100 text-blue-500"
                change={0.055}
-               className={{
-                  'opacity-10': expr('!{$page.charts.cash}'),
-               }}
             />
             <KPI
                title="Exchange Rate (1 EUR)"
