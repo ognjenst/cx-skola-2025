@@ -2337,9 +2337,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cx@npm:^25.2.1":
-  version: 25.2.1
-  resolution: "cx@npm:25.2.1"
+"cx@npm:^25.4.1":
+  version: 25.4.1
+  resolution: "cx@npm:25.4.1"
   dependencies:
     intl-io: "npm:^0.4.3"
     route-parser: "npm:^0.0.5"
@@ -2347,7 +2347,7 @@ __metadata:
     "@types/react": "*"
     react: "*"
     react-dom: "*"
-  checksum: 10/6fb7c5a9cd17ae168d08f01718dfd790759fdd07a0abdab7fc16ea42ce71667a46ee4769da672ef4b5127a2408dd29adc159f95f73b569d57e8b73b58c07059c
+  checksum: 10/11c0759404b41a38d31782dc374a99fa562e0389dc55e7d333f75eaf5c65773761de77b1881b053981a378d60ab56a30d3112ef63cae483e62b2573f4604809c
   languageName: node
   linkType: hard
 
@@ -2364,7 +2364,7 @@ __metadata:
     copy-webpack-plugin: "npm:^13.0.0"
     css-loader: "npm:^7.1.2"
     css-minimizer-webpack-plugin: "npm:^7.0.0"
-    cx: "npm:^25.2.1"
+    cx: "npm:^25.4.1"
     cx-react: "npm:^24.7.1"
     devcert: "npm:^1.2.2"
     file-loader: "npm:^6.2.0"
