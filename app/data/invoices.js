@@ -42,6 +42,10 @@ const invoices = Array.from({ length: 2000 }, (_, index) => {
    };
 });
 
+export function getMockInvoices() {
+   return [...invoices];
+}
+
 export const invoiceEndpoints = [
    http.get('/api/invoices', ({ request }) => {
       const url = new URL(request.url);
